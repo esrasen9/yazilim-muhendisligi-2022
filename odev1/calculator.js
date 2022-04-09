@@ -23,11 +23,9 @@ buttons.forEach((button) => {
 const getResult = () => {
   try {
     const result = eval(displayInput.textContent);
-    if (result !== Infinity) {
-      displayInput.textContent = result;
-    } else {
-      getError("Divide by zero error encountered!");
-    }
+    result !== Infinity
+      ? (displayInput.textContent = result)
+      : getError("Divide by zero error encountered!");
   } catch (e) {
     getError("Something went wrong!");
   }
@@ -36,7 +34,5 @@ const getResult = () => {
 const getError = (message) => {
   errorMessage.style.display = "block";
   errorMessage.textContent = message;
-  setTimeout(() => {
-    errorMessage.style.display = "none";
-  }, 5000);
+  setTimeout(() => (errorMessage.style.display = "none"), 5000);
 };
