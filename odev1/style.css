@@ -8,7 +8,7 @@
 .calculator-container {
   display: flex;
   flex-direction: column;
-  width: 30vw;
+  width: 25vw;
   position: absolute;
   left: 50%;
   top: 50%;
@@ -45,6 +45,7 @@
   border: 1px solid rgba(246, 65, 165, 0.5);
   box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
     rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+  outline: none;
 }
 
 #display-input {

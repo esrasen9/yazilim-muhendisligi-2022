@@ -1,3 +1,42 @@
+#Odev 1
+
+## Built With 🔨
+<ul>
+    <li> HTML</li>    
+    <li> CSS </li>   
+    <li>Javascript</li> 
+</ul>
+
+## V1
+<hr>
+<pre>
+<code>
+const displayInput = document.getElementById("display-input");
+const buttons = Array.from(document.getElementsByClassName("calc-btn"));
+buttons.forEach((button) => {
+  button.addEventListener("click", (e) => {
+    switch (e.target.textContent) {
+      case "C":
+        displayInput.textContent = "";
+        break;
+      case "←":
+        displayInput.textContent = displayInput.textContent.slice(0, -1);
+        break;
+      case "=":
+        displayInput.textContent = eval(displayInput.textContent);
+        break;
+      default:
+        displayInput.textContent += button.textContent;
+    }
+  });
+});
+</code>
+</pre>
+
+## V2
+<hr>
+<pre>
+<code>
 const displayInput = document.getElementById("display-input");
 const buttons = Array.from(document.getElementsByClassName("calc-btn"));
 const errorMessage = document.getElementById("err-message");
@@ -40,3 +79,12 @@ const getError = (message) => {
     errorMessage.style.display = "none";
   }, 5000);
 };
+</code>
+</pre>
+
+# Screenshots :camera_flash:
+
+![GitHub Logo](./screenshots/1.png)
+
+![GitHub Logo](./screenshots/2.png)
+
