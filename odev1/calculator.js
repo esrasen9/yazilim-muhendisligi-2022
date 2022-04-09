@@ -1,5 +1,6 @@
 const displayInput = document.getElementById("display-input");
 const buttons = Array.from(document.getElementsByClassName("calc-btn"));
+const errorMessage = document.getElementById("err-message");
 
 buttons.forEach((button) => {
   button.addEventListener("click", (e) => {
@@ -22,11 +23,21 @@ buttons.forEach((button) => {
 const getResult = () => {
   try {
     const result = eval(displayInput.textContent);
-    result !== Infinity
-      ? (displayInput.textContent = result)
-      : alert("Divide by zero error encountered!");
+    if (result !== Infinity) {
+      displayInput.textContent = result;
+    } else {
+      getError("Divide by zero error encountered!");
+    }
   } catch (e) {
-    displayInput.textContent = "";
-    alert("Something went wrong!");
+    getError("Something went wrong!");
   }
+};
+
+const getError = (message) => {
+  displayInput.textContent = "";
+  errorMessage.style.display = "block";
+  errorMessage.textContent = message;
+  setTimeout(() => {
+    errorMessage.style.display = "none";
+  }, 5000);
 };
