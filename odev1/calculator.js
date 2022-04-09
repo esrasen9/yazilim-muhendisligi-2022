@@ -11,10 +11,22 @@ buttons.forEach((button) => {
         displayInput.textContent = displayInput.textContent.slice(0, -1);
         break;
       case "=":
-        displayInput.textContent = eval(displayInput.textContent);
+        getResult();
         break;
       default:
         displayInput.textContent += button.textContent;
     }
   });
 });
+
+const getResult = () => {
+  try {
+    const result = eval(displayInput.textContent);
+    result !== Infinity
+      ? (displayInput.textContent = result)
+      : alert("Divide by zero error encountered!");
+  } catch (e) {
+    displayInput.textContent = "";
+    alert("Something went wrong!");
+  }
+};
