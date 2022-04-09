@@ -9,10 +9,12 @@
 
 ## V1
 <hr>
+
 <pre>
 <code>
 const displayInput = document.getElementById("display-input");
 const buttons = Array.from(document.getElementsByClassName("calc-btn"));
+
 buttons.forEach((button) => {
   button.addEventListener("click", (e) => {
     switch (e.target.textContent) {
@@ -35,6 +37,7 @@ buttons.forEach((button) => {
 
 ## V2
 <hr>
+
 <pre>
 <code>
 const displayInput = document.getElementById("display-input");
